@@ -76,6 +76,8 @@ RUN rm -f /etc/gateone/ssl/key.pem && \
     rm -f /etc/gateone/ssl/certificate.pem
 # (We don't want everyone using the same SSL key/certificate)
 
+VOLUME ["/"]
+
 EXPOSE 8000
 
 CMD ["/usr/local/bin/update_and_run_gateone", "--log_file_prefix=/gateone/logs/gateone.log"]
